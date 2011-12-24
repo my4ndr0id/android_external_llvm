@@ -45,7 +45,8 @@ LOCAL_IS_HOST_MODULE := true
 LOCAL_SRC_FILES := $(llvm_opt_SRC_FILES)
 LOCAL_STATIC_LIBRARIES := $(llvm_opt_STATIC_LIBRARIES)
 LOCAL_LDLIBS += -lpthread -lm -ldl
-LOCAL_C_INCLUDES += external/llvm/include
+LLVM_PATH ?= external/llvm
+LOCAL_C_INCLUDES += $(LLVM_PATH)/include
 
 include $(LLVM_ROOT_PATH)/llvm.mk
 include $(LLVM_HOST_BUILD_MK)
